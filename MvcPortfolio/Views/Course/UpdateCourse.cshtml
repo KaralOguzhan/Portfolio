@@ -1,0 +1,19 @@
+﻿@model MvcPortfolio.Models.Entity.TblCourses
+@{
+    ViewBag.Title = "UpdateCourse";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kurs Güncelleme Sayfası</h2>
+
+<form method="post">
+    <label>Yetenek Id</label>
+    @Html.HiddenFor(x => x.CourseId, new { @class = "form-control" })
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.CourseName, new { @class = "form-control" })
+    <label>Yeteneğin Skoru</label>
+    @Html.TextBoxFor(x => x.CourseInstructor, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-outline-success">Kursu Güncelle</button>
+</form>

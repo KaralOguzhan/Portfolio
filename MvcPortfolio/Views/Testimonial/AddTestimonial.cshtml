@@ -1,0 +1,20 @@
+﻿@model MvcPortfolio.Models.Entity.TblTestimonial
+@{
+    ViewBag.Title = "AddTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Referans Ekle</h2>
+
+<form method="post">
+    <label>Hobinin Adı</label>
+    @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+    <label>Ünvan</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Comment</label>
+    @Html.TextBoxFor(x => x.Comment, new { @class = "form-control" })
+    <label>Durumu</label>
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Referans Ekle</button>
+</form>

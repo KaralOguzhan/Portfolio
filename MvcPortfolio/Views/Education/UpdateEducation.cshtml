@@ -1,0 +1,20 @@
+﻿@model MvcPortfolio.Models.Entity.TblEducation
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Proje Güncelleme Sayfası</h2>
+
+<form method="post">
+    <label>Eğitim ID'si</label>
+    @Html.TextBoxFor(x => x.EducationId, new { @class = "form-control" })
+    <label>Okul Adı</label>
+    @Html.TextBoxFor(x => x.EducationName, new { @class = "form-control" })
+    <label>Bölüm Adı</label>
+    @Html.TextBoxFor(x => x.EducationSubName, new { @class = "form-control" })
+    <label>Eğitim Alınan Yıl Aralığı</label>
+    @Html.TextBoxFor(x => x.EducationDate, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Eğitimi Güncelle</button>
+</form>

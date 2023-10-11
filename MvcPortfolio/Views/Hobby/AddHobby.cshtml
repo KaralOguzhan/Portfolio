@@ -1,0 +1,17 @@
+﻿@model MvcPortfolio.Models.Entity.TblHobby
+@{
+    ViewBag.Title = "AddHobby";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hobi Ekle</h2>
+
+<form method="post">
+    <label>Hobinin Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <label>Tutkun Olma Derecen</label>
+    @Html.TextBoxFor(x => x.Score, new { @class = "form-control" })
+    
+    <br />
+    <button class="btn btn-outline-success">Hobi Ekle</button>
+</form>

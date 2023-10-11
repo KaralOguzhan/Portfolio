@@ -1,0 +1,37 @@
+﻿@model List<MvcPortfolio.Models.Entity.TblExperience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İş Tecrübelerim</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ünvan</th>
+        <th>İş Yeri Adı</th>
+        <th>İş Açıklaması</th>
+        <th>İşte Çalışılan Zaman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ExpId</td>
+            <td>@item.ExpTitle</td>
+            <td>@item.ExpSubTitle</td>
+            <td>@item.ExpDescription</td>
+            <td>@item.ExpDate</td>
+
+
+            <td><a href="/Experience/DeleteExperience/@item.ExpId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExpId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<td><a href="/Experience/AddExperience" class="btn btn-outline-primary">Yeni İş Tecrübe Girişi</a></td>
+
+

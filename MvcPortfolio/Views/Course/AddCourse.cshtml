@@ -1,0 +1,18 @@
+﻿@model MvcPortfolio.Models.Entity.TblCourses
+@{
+    ViewBag.Title = "AddCourse";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Kurs Ekle</h2>
+
+<form method="post">
+    <label>Kursun Adı</label>
+    @Html.TextBoxFor(x => x.CourseName, new { @class = "form-control" })
+    <label>Eğitmenin Adı</label>
+    @Html.TextBoxFor(x => x.CourseInstructor, new { @class = "form-control" })
+    
+    <br />
+    <button class="btn btn-outline-success">Kurs Ekle</button>
+</form>

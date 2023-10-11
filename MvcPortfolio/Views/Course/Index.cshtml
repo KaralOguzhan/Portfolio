@@ -1,0 +1,33 @@
+﻿@model List<MvcPortfolio.Models.Entity.TblCourses>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Yeteneklerim</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kursun Adı</th>
+        <th>Kursun Eğitmeni</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CourseId</td>
+            <td>@item.CourseName</td>
+            <td>@item.CourseInstructor</td>
+
+
+            <td><a href="/Course/DeleteCourse/@item.CourseId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Course/UpdateCourse/@item.CourseId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<td><a href="/Course/AddCourse" class="btn btn-outline-primary">Yeni Kurs Girişi</a></td>
+

@@ -1,0 +1,54 @@
+﻿
+<section class="page-section " id="contact">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center  text-uppercase text-secondary mb-0">İLETİŞİM</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post">
+                    <!-- Name input-->
+                    <div class="form-floating mb-3 " >
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="FullName" data-sb-validations="required" />
+                        <label for="name" style="padding:15px;padding-top:3%">Adınız Soyadınız</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">İsminizi yazmanız zorunludur.</div>
+                    </div>
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control " name="Email" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                        <label for="email" style="padding:15px;padding-top:3%">Email adresiniz</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">Email adresinizi yazmanız zorunludur.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Geçerli bir Email adresi giriniz.</div>
+                    </div>
+                    <!-- Phone number input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control " name="Phone" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                        <label for="phone" style="padding:15px;padding-top:3%">Telefon numaranız</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">Telefon numaranızı yazmanız zorunludur.</div>
+                    </div>
+                    <!-- Message input-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control " name="Text" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                        <label for="message" style="padding:15px;padding-top:3%">Mesajınız</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Bir mesaj yazmak zorunludur.</div>
+                    </div>
+                    
+                    <button class="btn btn-dark  btn-xl" id="submitButton" type="submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

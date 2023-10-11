@@ -1,0 +1,19 @@
+﻿@model MvcPortfolio.Models.Entity.TblSkill
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Proje Güncelleme Sayfası</h2>
+
+<form method="post">
+    <label>Yetenek Id</label>
+    @Html.HiddenFor(x => x.SkillId, new { @class = "form-control" })
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <label>Yeteneğin Skoru</label>
+    @Html.TextBoxFor(x => x.SkillScore, new { @class = "form-control" })
+    
+    <br />
+    <button class="btn btn-outline-success">Yeneteği Güncelle</button>
+</form>

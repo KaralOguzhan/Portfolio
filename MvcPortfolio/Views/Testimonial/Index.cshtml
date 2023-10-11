@@ -1,0 +1,63 @@
+﻿@model List<MvcPortfolio.Models.Entity.TblTestimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Referanslarım</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Referansın Adı</th>
+        <th>Referansın Ünvanı</th>
+        <th>Yorumu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Durumu Değiştir</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (@item.Status == false)
+        {
+            <tr style="background-color: #EE7171; ">
+                <td>@item.TestimonialId</td>
+                <td><strong>@item.FullName</strong></td>
+                <td><strong>@item.Title</strong></td>
+                <td><strong>@item.Comment</strong></td>
+
+
+
+                <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-dark">Sil</a></td>
+                <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-light">Güncelle</a></td>
+                <td><a href="/Testimonial/ChangeTestimonialStatus/@item.TestimonialId" class="btn btn-success ">Değiştir</a></td>
+            </tr>
+        }
+        if (item.Status == true)
+        {
+            <tr style="background-color: #23CB09; ">
+                <td>@item.TestimonialId</td>
+                <td><strong>@item.FullName</strong></td>
+                <td><strong>@item.Title</strong></td>
+                <td><strong>@item.Comment</strong></td>
+
+
+
+                <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-dark">Sil</a></td>
+                <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-light">Güncelle</a></td>
+                <td><a href="/Testimonial/ChangeTestimonialStatus/@item.TestimonialId" class="btn btn-danger">Değiştir</a></td>
+            </tr>
+        }
+    }
+
+
+
+
+</table>
+<td><a href="/Testimonial/AddTestimonial" class="btn btn-outline-primary">Yeni Referans Ekle</a></td>
+
+
+

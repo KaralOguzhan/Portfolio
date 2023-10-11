@@ -1,0 +1,36 @@
+﻿@model List<MvcPortfolio.Models.Entity.TblHobby>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hobilerim</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Hobi</th>
+        <th>Skoru</th>
+        
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HobbyId</td>
+            <td>@item.Name</td>
+            <td>@item.Score</td>
+            
+
+
+            <td><a href="/Hobby/DeleteHobby/@item.HobbyId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Hobby/UpdateHobby/@item.HobbyId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<td><a href="/Hobby/AddHobby" class="btn btn-outline-primary">Yeni Hobi Ekle</a></td>
+
+
+

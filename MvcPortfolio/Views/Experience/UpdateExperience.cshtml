@@ -1,0 +1,22 @@
+﻿@model MvcPortfolio.Models.Entity.TblExperience
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İş Tecrünesi Güncelleme Sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.ExpId, new { @class = "form-control" })
+    <label>Ünvan</label>
+    @Html.TextBoxFor(x => x.ExpTitle, new { @class = "form-control" })
+    <label>İş Yeri Adı</label>
+    @Html.TextBoxFor(x => x.ExpSubTitle, new { @class = "form-control" })
+    <label>İş Açıklaması</label>
+    @Html.TextAreaFor(x => x.ExpDescription, 5,1, new { @class = "form-control" })
+    <label>İşte Çalışılan Zaman</label>
+    @Html.TextBoxFor(x => x.ExpDate, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">İş Tecrübemi Güncelle</button>
+</form>

@@ -1,0 +1,16 @@
+﻿@model MvcPortfolio.Models.Entity.TblSkill
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Eğitim Ekle</h2>
+
+<form method="post">
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <label>Yetenek Skoru</label>
+    @Html.TextBoxFor(x => x.SkillScore, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Eğitim Ekle</button>
+</form>

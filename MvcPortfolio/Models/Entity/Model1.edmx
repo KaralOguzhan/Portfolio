@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="ImgUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="AboutTitle" Type="varchar" MaxLength="20" />
+          <Property Name="AboutDescription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="70" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="10" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="TblCourses">
+          <Key>
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CourseInstructor" Type="nvarchar" MaxLength="50" />
+          <Property Name="CourseImgUrl" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TblEducation">
+          <Key>
+            <PropertyRef Name="EducationId" />
+          </Key>
+          <Property Name="EducationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EducationName" Type="nvarchar" MaxLength="200" />
+          <Property Name="EducationDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="EducationImgUrl" Type="nvarchar(max)" />
+          <Property Name="EducationSubName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblExperience">
+          <Key>
+            <PropertyRef Name="ExpId" />
+          </Key>
+          <Property Name="ExpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExpTitle" Type="varchar" MaxLength="100" />
+          <Property Name="ExpSubTitle" Type="varchar" MaxLength="100" />
+          <Property Name="ExpDescription" Type="varchar(max)" />
+          <Property Name="ExpDate" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblHobby">
+          <Key>
+            <PropertyRef Name="HobbyId" />
+          </Key>
+          <Property Name="HobbyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Score" Type="int" />
+          <Property Name="HobbyImgUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblSkill">
+          <Key>
+            <PropertyRef Name="SkillId" />
+          </Key>
+          <Property Name="SkillId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkillScore" Type="int" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaId" />
+          </Key>
+          <Property Name="SocialMediaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SocialMediaUrl" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SocialMediaImgUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblTestimonial">
+          <Key>
+            <PropertyRef Name="TestimonialId" />
+          </Key>
+          <Property Name="TestimonialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="DbCvModelStoreContainer">
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblContact" EntityType="Self.TblContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCourses" EntityType="Self.TblCourses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEducation" EntityType="Self.TblEducation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblExperience" EntityType="Self.TblExperience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHobby" EntityType="Self.TblHobby" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImgUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AboutDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblCourses">
+          <Key>
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CourseInstructor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CourseImgUrl" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblEducation">
+          <Key>
+            <PropertyRef Name="EducationId" />
+          </Key>
+          <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EducationName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EducationDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EducationImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EducationSubName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblExperience">
+          <Key>
+            <PropertyRef Name="ExpId" />
+          </Key>
+          <Property Name="ExpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExpTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ExpSubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ExpDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExpDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblHobby">
+          <Key>
+            <PropertyRef Name="HobbyId" />
+          </Key>
+          <Property Name="HobbyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="HobbyImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSkill">
+          <Key>
+            <PropertyRef Name="SkillId" />
+          </Key>
+          <Property Name="SkillId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SkillScore" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaId" />
+          </Key>
+          <Property Name="SocialMediaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SocialMediaImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" />
+          <EntitySet Name="TblCourses" EntityType="Self.TblCourses" />
+          <EntitySet Name="TblEducation" EntityType="Self.TblEducation" />
+          <EntitySet Name="TblExperience" EntityType="Self.TblExperience" />
+          <EntitySet Name="TblHobby" EntityType="Self.TblHobby" />
+          <EntitySet Name="TblSkill" EntityType="Self.TblSkill" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" />
+          <EntitySet Name="TblContact" EntityType="DbCvModel.TblContact" />
+          <EntitySet Name="TblTestimonial" EntityType="DbCvModel.TblTestimonial" />
+        </EntityContainer>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TblTestimonial">
+          <Key>
+            <PropertyRef Name="TestimonialId" />
+          </Key>
+          <Property Name="TestimonialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities">
+          <EntitySetMapping Name="TblAbout">
+            <EntityTypeMapping TypeName="DbCvModel.TblAbout">
+              <MappingFragment StoreEntitySet="TblAbout">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
+                <ScalarProperty Name="AboutDescription" ColumnName="AboutDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCourses">
+            <EntityTypeMapping TypeName="DbCvModel.TblCourses">
+              <MappingFragment StoreEntitySet="TblCourses">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="CourseInstructor" ColumnName="CourseInstructor" />
+                <ScalarProperty Name="CourseImgUrl" ColumnName="CourseImgUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEducation">
+            <EntityTypeMapping TypeName="DbCvModel.TblEducation">
+              <MappingFragment StoreEntitySet="TblEducation">
+                <ScalarProperty Name="EducationId" ColumnName="EducationId" />
+                <ScalarProperty Name="EducationName" ColumnName="EducationName" />
+                <ScalarProperty Name="EducationDate" ColumnName="EducationDate" />
+                <ScalarProperty Name="EducationImgUrl" ColumnName="EducationImgUrl" />
+                <ScalarProperty Name="EducationSubName" ColumnName="EducationSubName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblExperience">
+            <EntityTypeMapping TypeName="DbCvModel.TblExperience">
+              <MappingFragment StoreEntitySet="TblExperience">
+                <ScalarProperty Name="ExpId" ColumnName="ExpId" />
+                <ScalarProperty Name="ExpTitle" ColumnName="ExpTitle" />
+                <ScalarProperty Name="ExpSubTitle" ColumnName="ExpSubTitle" />
+                <ScalarProperty Name="ExpDescription" ColumnName="ExpDescription" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHobby">
+            <EntityTypeMapping TypeName="DbCvModel.TblHobby">
+              <MappingFragment StoreEntitySet="TblHobby">
+                <ScalarProperty Name="HobbyId" ColumnName="HobbyId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="HobbyImgUrl" ColumnName="HobbyImgUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSkill">
+            <EntityTypeMapping TypeName="DbCvModel.TblSkill">
+              <MappingFragment StoreEntitySet="TblSkill">
+                <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SkillScore" ColumnName="SkillScore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSocialMedia">
+            <EntityTypeMapping TypeName="DbCvModel.TblSocialMedia">
+              <MappingFragment StoreEntitySet="TblSocialMedia">
+                <ScalarProperty Name="SocialMediaId" ColumnName="SocialMediaId" />
+                <ScalarProperty Name="SocialMediaUrl" ColumnName="SocialMediaUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SocialMediaImgUrl" ColumnName="SocialMediaImgUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblContact">
+            <EntityTypeMapping TypeName="DbCvModel.TblContact">
+              <MappingFragment StoreEntitySet="TblContact">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTestimonial">
+            <EntityTypeMapping TypeName="DbCvModel.TblTestimonial">
+              <MappingFragment StoreEntitySet="TblTestimonial">
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="TestimonialId" ColumnName="TestimonialId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
